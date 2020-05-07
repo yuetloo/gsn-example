@@ -53,6 +53,7 @@ DeployPlugin.prototype.run = async function(a) {
   let contract = await factory.deploy( { gasLimit: 2000000 });
   let receipt = await contract.deployed();
   console.log(receipt);
+  console.log('Contract created at address', receipt.address);
 };
 
 FundPlugin.getHelp = function() {
