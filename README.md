@@ -31,7 +31,7 @@ The following example shows how to deploy to the ropsten testnet.  To deploy to 
    ```
 
 ## GSN Networks
-This example currently only supports GSN 1.0 network.  The list of relay hubs for different environment can be found here: [GSN 1.0 networks](https://docs.opengsn.org/gsn-provider/networks.html#gsn_1_0).  For GSN 1.0, relay hubs in all networks have the same address: `0xD216153c06E857cD7f72665E0aF1d7D82172F494`.
+This example currently only supports GSN 1.0 network.  The list of relay hubs for different environment can be found here: [GSN 1.0 networks](https://docs.opengsn.org/gsn-provider/networks.html#gsn_1_0).  For GSN 1.0, relay hubs for all networks have the same address: `0xD216153c06E857cD7f72665E0aF1d7D82172F494`.
 
 ## Testing
 See [Gsn Signer tests](https://github.com/yuetloo/ethers.js/blob/gsn-signer/packages/tests/src.ts/test-gsn-signer.ts)

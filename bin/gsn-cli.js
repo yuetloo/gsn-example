@@ -19,7 +19,6 @@ inherits(DeployPlugin, CLI.Plugin);
 function FundPlugin() {}
 inherits(FundPlugin, CLI.Plugin);
 
-
 DeployPlugin.getHelp = function() {
   return {
     name: 'deploy Contract',
@@ -54,6 +53,11 @@ DeployPlugin.prototype.run = async function(a) {
   let receipt = await contract.deployed();
   console.log(receipt);
   console.log('Contract created at address', receipt.address);
+
+  const tx = await contract.initialize();
+
+  await tx.wait();
+  console.log('initialization completed');
 };
 
 FundPlugin.getHelp = function() {
@@ -86,6 +90,7 @@ FundPlugin.prototype.run = async function(a) {
   await tx.wait();
   console.log('Relay hub funding completed');
 };
+
 
 cli.addPlugin('fund', FundPlugin);
 cli.addPlugin('deploy', DeployPlugin);
