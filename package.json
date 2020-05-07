@@ -1,0 +1,24 @@
+{
+  "name": "gsn-example",
+  "version": "1.0.0",
+  "description": "Gas Stations network sample contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuetloo/gsn-example.git"
+  },
+  "keywords": [],
+  "author": "Yuet Loo Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuetloo/gsn-example/issues"
+  },
+  "homepage": "https://github.com/yuetloo/gsn-example#readme",
+  "dependencies": {
+    "@ethersproject/cli": "^5.0.0-beta.155",
+    "ethers": "^5.0.0-beta.185"
+  }
+}
