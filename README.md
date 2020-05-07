@@ -1,5 +1,5 @@
 # Gas Station Network (GSN)
-This repository contains a contract, storage.sol, that implements the GsnRecipient interface. See [EIP 1613: Gas Stations network](https://eips.ethereum.org/EIPS/eip-1613) for more details about GSN.  GSN enables accounts that do not own ether to be able to call state changing functions in the contracts that implement the GsnRecipient interface
+This repository contains a contract, storage.sol, that implements the GsnRecipient interface. See [EIP 1613: Gas Stations network](https://eips.ethereum.org/EIPS/eip-1613) or [OpenGsn](https://docs.opengsn.org/learn/index.html) for more details about GSN.  GSN enables accounts that do not own ether to be able to call state changing functions in the contracts that implement the GsnRecipient interface.
 
 ## Contracts
 A test contract, Storage, that implements the GsnRecipient interface. It has functions to read and write a number storage value
