@@ -8,6 +8,9 @@ import "./GSNRecipient.sol";
 contract Storage is GSNRecipient {
     uint256 public value;
 
+    bytes32 constant validApproval = 0x6adf031833174bbe4c85eafe59ddb54e6584648c2c962c6f94791ab49caa0ad4;
+
+
     function setValue(uint256 val) public {
         value = val;
     }
@@ -23,6 +26,10 @@ contract Storage is GSNRecipient {
         bytes calldata approvalData,
         uint256 maxPossibleCharge
     ) external view returns (uint256, bytes memory) {
+        if( approvalData.length > 0 ) {
+            bytes32 hash = keccak256(approvalData);
+            require(hash == validApproval, "approval data is not valid");
+        }
         return _approveRelayedCall();
     }
 
