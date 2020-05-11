@@ -63,13 +63,13 @@ DeployPlugin.prototype.run = async function(a) {
 FundPlugin.getHelp = function() {
   return {
     name: 'fund ADDRESS',
-    help: 'fund 0.1 eth on relay hub for RECIPIENT ADDRESS'
+    help: 'fund N ethers on relay hub for RECIPIENT ADDRESS'
   };
 };
 
 FundPlugin.prototype.prepareArgs = async function(args) {
   await CLI.Plugin.prototype.prepareArgs.call(this, args);
-  if (args.length !== 1) {
+  if (args.length < 1) {
     this.throwUsageError('fund requires RECIPIENT ADDRESS');
   }
 
@@ -78,13 +78,16 @@ FundPlugin.prototype.prepareArgs = async function(args) {
   }
 
   this.recipientAddress = args[0];
+
+  this.fundAmount = ( args.length > 1? args[1] : 0.1 )
+
 };
 
 FundPlugin.prototype.run = async function(a) {
   await CLI.Plugin.prototype.run.call(this);
 
   const contract = new ethers.Contract( relayHubAddress, abi, this.accounts[0] );
-  const wei = ethers.utils.parseEther('0.1');
+  const wei = ethers.utils.parseEther(this.fundAmount);
   const tx = await contract.depositFor(this.recipientAddress, { value: wei });
 
   await tx.wait();

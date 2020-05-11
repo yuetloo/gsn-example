@@ -27,7 +27,7 @@ The following example shows how to deploy to the ropsten testnet.  To deploy to 
 2. Fund the Relay Hub
    - Need to fund the newly created contract (from step 1) in the Relay Hub
    ```
-     bin/gsn-cli.js fund {contract address from step 1} --account {json wallet path} --network ropsten 
+     bin/gsn-cli.js fund {contract address from step 1} [amount to fund in ether] --account {json wallet path} --network ropsten
    ```
 
 ## GSN Networks
