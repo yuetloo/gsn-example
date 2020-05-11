@@ -7,12 +7,14 @@ import "./GSNRecipient.sol";
 */
 contract Storage is GSNRecipient {
     uint256 public value;
+    uint256 public count;
 
     bytes32 constant validApproval = 0x6adf031833174bbe4c85eafe59ddb54e6584648c2c962c6f94791ab49caa0ad4;
 
 
     function setValue(uint256 val) public {
         value = val;
+        count++;
     }
 
     function acceptRelayedCall(
